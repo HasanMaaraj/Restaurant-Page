@@ -1,4 +1,5 @@
 import './style.css';
+import Logo from './logo.png';
 
 const renderHomePage = function() {
 
@@ -17,6 +18,10 @@ const rederWebiste = (function() {
     // Create and append header
     const header = document.createElement('div');
     header.id = 'header';
+    const myLogo = new Image()
+    myLogo.src = Logo;
+    myLogo.id = 'logo';
+    header.appendChild(myLogo)
     const buttunsContainer = document.createElement('div');
     buttunsContainer.id = 'buttons'
     const homeButton = document.createElement('button');
