@@ -41,3 +41,18 @@
     background-image: url(./background.png);
     background-size: 100% 100%;
 }
+
+.item-card {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+.item-img {
+    height: 150px;
+    width: 150px;
+    justify-self: center;
+}
+/* .item-info {
+    
+} */

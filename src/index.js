@@ -41,30 +41,41 @@ const renderMenuTab = function() {
     const createMenuItem = function(item){
         const itemCard = document.createElement('div');
         itemCard.className = 'item-card';
+        const itemInformation = document.createElement('div');
+        itemInformation.className = 'item-info';
+        const itemImage = new Image();
+        itemImage.className = 'item-img';
+        itemImage.src = item.imageUrl;
+        itemCard.appendChild(itemImage)
+
         const itemTitle = document.createElement('h3');
         itemTitle.textContent = item.title;
         itemTitle.className = 'item-title';
-        itemCard.appendChild(itemTitle);
-        const itemImage = new Image();
-        itemImage.src = item.imageUrl;
-        itemImage.className = 'item-img';
-        itemCard.appendChild(itemImage)
+        itemInformation.appendChild(itemTitle);
+        
         const itemPrice = document.createElement('p');
         itemPrice.textContent = `${item.price}`;
         itemPrice.className = 'item-price';
-        itemCard.appendChild(itemPrice);
+        itemInformation.appendChild(itemPrice);
+        
         const itemDescreption = document.createElement('p');
         itemDescreption.textContent = item.descreption;
         itemDescreption.className = 'item-descreption';
-        itemCard.appendChild(itemDescreption);
-        console.log(itemCard);
+        itemInformation.appendChild(itemDescreption);
+        
+        itemCard.appendChild(itemInformation);
+
         return itemCard;
     }
+    
+    const menu = document.createElement('div');
+    menu.className = 'menu';
     const itemDivs = items.map(createMenuItem);
     itemDivs.forEach(div => {
-        const tabContainer = document.querySelector('#tab-container');
-        tabContainer.appendChild(div);
+        menu.appendChild(div);
     });
+    document.querySelector('#tab-container').appendChild(menu);
+    
 }
 
 const renderContactTab = function() {
