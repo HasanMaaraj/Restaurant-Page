@@ -1,3 +1,18 @@
 import './style.css';
 
-console.log('Hello, World!');
+const renderHomePage = function() {
+
+}
+
+const renderMenuPage = function() {
+
+}
+
+const renderContactPage = function() {
+
+}
+
+const rederWebiste = (function() {
+    
+
+})();
