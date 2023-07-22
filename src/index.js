@@ -1,19 +1,34 @@
 import './style.css';
 import Logo from './logo.png';
 
-const renderHomePage = function() {
+const renderHomeTab = function() {
+    const tabContainer = document.querySelector('#tab-container');
+    tabContainer.childNodes.forEach(node => node.remove());
+    const restaurantName = document.createElement('h1');
+    restaurantName.textContent = 'My good Restaurant';
+    tabContainer.appendChild(restaurantName);
+    const restaurantInformation = document.createElement('p');
+    restaurantInformation.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>\
+    Praesent accumsan blandit ex in venenatis. Curabitur semper ultrices aliquam. In suscipit<br>\
+    massa ut nibh mattis consectetur. Sed rhoncus finibus diam, eu posuere erat feugiat in.<br>\
+    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis<br>\
+    egestas. In aliquet massa at felis laoreet lacinia id et felis. Nulla tristique nunc<br>\
+    eget cursus tristique. Pellentesque semper, ligula in porttitor euismod, arcu quam<br>\
+    vestibulum enim, et commodo mauris nunc sit amet diam. Nulla facilisis cursus tellus<br>\
+    at ornare. Integer commodo metus eget lacinia congue. Suspendisse non sem quis<br>\
+    quam tincidunt euismod. Aenean ex arcu, ornare et dapibus in, vehicula at orci.';
+    tabContainer.appendChild(restaurantInformation);
+    
+}
+const renderMenuTab = function() {
 
 }
 
-const renderMenuPage = function() {
+const renderContactTab = function() {
 
 }
 
-const renderContactPage = function() {
-
-}
-
-const rederWebiste = (function() {
+const renderWebiste = (function() {
     const content = document.querySelector('#content');
     // Create and append header
     const header = document.createElement('div');
@@ -22,21 +37,21 @@ const rederWebiste = (function() {
     myLogo.src = Logo;
     myLogo.id = 'logo';
     header.appendChild(myLogo)
-    const buttunsContainer = document.createElement('div');
-    buttunsContainer.id = 'buttons'
-    const homeButton = document.createElement('button');
-    homeButton.id = 'home-button';
-    homeButton.textContent = 'Home';
-    buttunsContainer.appendChild(homeButton);
-    const menuButton = document.createElement('button');
-    menuButton.id = 'menu-button';
-    menuButton.textContent = 'Menu';
-    buttunsContainer.appendChild(menuButton);
-    const contactButton = document.createElement('button');
-    contactButton.id = 'contact-button';
-    contactButton.textContent = 'Contact';
-    buttunsContainer.appendChild(contactButton);
-    header.appendChild(buttunsContainer);
+    const linksContainer = document.createElement('div');
+    linksContainer.id = 'links'
+    const homeLink = document.createElement('a');
+    homeLink.id = 'home-link';
+    homeLink.textContent = 'Home';
+    linksContainer.appendChild(homeLink);
+    const menuLink = document.createElement('a');
+    menuLink.id = 'menu-link';
+    menuLink.textContent = 'Menu';
+    linksContainer.appendChild(menuLink);
+    const contactLink = document.createElement('a');
+    contactLink.id = 'contact-link';
+    contactLink.textContent = 'Contact';
+    linksContainer.appendChild(contactLink);
+    header.appendChild(linksContainer);
     content.appendChild(header);
     // Create and append tab container
     const tabContainer = document.createElement('div');
@@ -47,4 +62,5 @@ const rederWebiste = (function() {
     footer.id = 'footer';
     content.appendChild(footer);
 
+    renderHomeTab();
 })();

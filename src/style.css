@@ -10,8 +10,8 @@
 
 #header {
     display: flex;
-    justify-content: space-between;
     align-content: center;
+    justify-content: center;
 }
 
 #header>* {
@@ -23,15 +23,14 @@
     width: auto;
 }
 
-#buttons {
+#links {
     display: flex;
+    /* align-content: center; */
     gap: 20px;
 }
 
-#buttons button {
-    background-color:  rgb(73,72,72);
-    color: rgb(228, 168, 16);
-    border-radius: 6px;
+#links a {
+    color: rgb(73,72,72);
     align-self: center;
     font-size: 1.5rem;
     height: 45px;
