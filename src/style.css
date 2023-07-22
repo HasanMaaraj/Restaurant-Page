@@ -1,0 +1,39 @@
+#content {
+    display: grid;
+    grid-template-rows: max(150px, 20vh) max(525px, 70vh) max(75px, 10vh);
+}
+
+#header,
+#footer {
+    background-color: rgb(228, 168, 16);
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#header>* {
+    margin: 0px 60px;
+}
+
+#logo {
+    height: 90%;
+    width: auto;
+}
+
+#buttons {
+    display: flex;
+    gap: 20px;
+}
+
+#buttons button {
+    background-color:  rgb(73,72,72);
+    color: rgb(228, 168, 16);
+    border-radius: 6px;
+    align-self: center;
+    font-size: 1.5rem;
+    height: 45px;
+    padding: 8px;
+}
