@@ -37,3 +37,8 @@
     height: 45px;
     padding: 8px;
 }
+
+#tab-container {
+    background-image: url(./background.png);
+    background-size: 100% 100%;
+}
