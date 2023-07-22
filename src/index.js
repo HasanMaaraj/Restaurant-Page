@@ -1,9 +1,15 @@
 import './style.css';
 import Logo from './logo.png';
+import Burger from './burger.png'
+
+const clearTab = function() {
+    const tabContainer = document.querySelector('#tab-container');
+    Array.from(tabContainer.childNodes).forEach(node => node.remove());
+}
 
 const renderHomeTab = function() {
+    clearTab();
     const tabContainer = document.querySelector('#tab-container');
-    tabContainer.childNodes.forEach(node => node.remove());
     const restaurantName = document.createElement('h1');
     restaurantName.textContent = 'My good Restaurant';
     tabContainer.appendChild(restaurantName);
@@ -20,8 +26,45 @@ const renderHomeTab = function() {
     tabContainer.appendChild(restaurantInformation);
     
 }
-const renderMenuTab = function() {
 
+const renderMenuTab = function() {
+    clearTab();
+    const items = [
+        {
+            title: 'burger',
+            imageUrl: Burger,
+            price: 5,
+            descreption: 'bun with patty in it'
+        },
+    ];
+    
+    const createMenuItem = function(item){
+        const itemCard = document.createElement('div');
+        itemCard.className = 'item-card';
+        const itemTitle = document.createElement('h3');
+        itemTitle.textContent = item.title;
+        itemTitle.className = 'item-title';
+        itemCard.appendChild(itemTitle);
+        const itemImage = new Image();
+        itemImage.src = item.imageUrl;
+        itemImage.className = 'item-img';
+        itemCard.appendChild(itemImage)
+        const itemPrice = document.createElement('p');
+        itemPrice.textContent = `${item.price}`;
+        itemPrice.className = 'item-price';
+        itemCard.appendChild(itemPrice);
+        const itemDescreption = document.createElement('p');
+        itemDescreption.textContent = item.descreption;
+        itemDescreption.className = 'item-descreption';
+        itemCard.appendChild(itemDescreption);
+        console.log(itemCard);
+        return itemCard;
+    }
+    const itemDivs = items.map(createMenuItem);
+    itemDivs.forEach(div => {
+        const tabContainer = document.querySelector('#tab-container');
+        tabContainer.appendChild(div);
+    });
 }
 
 const renderContactTab = function() {
@@ -64,3 +107,6 @@ const renderWebiste = (function() {
 
     renderHomeTab();
 })();
+
+const menuLink = document.querySelector('#menu-link');
+menuLink.addEventListener('click', renderMenuTab);
