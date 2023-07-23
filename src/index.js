@@ -1,6 +1,10 @@
 import './style.css';
 import Logo from './logo.png';
-import Burger from './burger.png'
+import Burger from './images/burger.png'
+import Pizza from './images/pizza.png'
+import Pasta from './images/pasta.png'
+import Steak from './images/steak.png'
+
 
 const clearTab = function() {
     const tabContainer = document.querySelector('#tab-container');
@@ -31,10 +35,28 @@ const renderMenuTab = function() {
     clearTab();
     const items = [
         {
-            title: 'burger',
+            title: 'Burger',
             imageUrl: Burger,
             price: 5,
             descreption: 'bun with patty in it'
+        },
+        {
+            title: 'Pizza',
+            imageUrl: Pizza,
+            price: 10,
+            descreption: 'Pepperoni pizza'
+        },
+        {
+            title: 'Pasta',
+            imageUrl: Pasta,
+            price: 12,
+            descreption: 'Italian cuisine Pasta Organic'
+        },
+        {
+            title: 'Steak',
+            imageUrl: Steak,
+            price: 30,
+            descreption: 'Rib eye steak Barbecue Roast beef Sirloin steak Short ribs'
         },
     ];
     
