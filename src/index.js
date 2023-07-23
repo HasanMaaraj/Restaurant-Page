@@ -14,9 +14,13 @@ const clearTab = function() {
 const renderHomeTab = function() {
     clearTab();
     const tabContainer = document.querySelector('#tab-container');
+    const homeCardContainer = document.createElement('div');
+    homeCardContainer.className = 'card-container';
+    const homeCard = document.createElement('div');
+    homeCard.className = 'home-card';
     const restaurantName = document.createElement('h1');
     restaurantName.textContent = 'My good Restaurant';
-    tabContainer.appendChild(restaurantName);
+    homeCard.appendChild(restaurantName);
     const restaurantInformation = document.createElement('p');
     restaurantInformation.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>\
     Praesent accumsan blandit ex in venenatis. Curabitur semper ultrices aliquam. In suscipit<br>\
@@ -27,7 +31,9 @@ const renderHomeTab = function() {
     vestibulum enim, et commodo mauris nunc sit amet diam. Nulla facilisis cursus tellus<br>\
     at ornare. Integer commodo metus eget lacinia congue. Suspendisse non sem quis<br>\
     quam tincidunt euismod. Aenean ex arcu, ornare et dapibus in, vehicula at orci.';
-    tabContainer.appendChild(restaurantInformation);
+    homeCard.appendChild(restaurantInformation);
+    homeCardContainer.appendChild(homeCard);
+    tabContainer.appendChild(homeCardContainer);
     
 }
 
@@ -82,7 +88,7 @@ const renderMenuTab = function() {
         itemPrice.textContent = `${item.price}`;
         itemPrice.className = 'item-price';
         itemHeader.appendChild(itemPrice);
-        
+
         itemInformation.appendChild(itemHeader);
         
         const itemDescreption = document.createElement('p');
@@ -106,7 +112,30 @@ const renderMenuTab = function() {
 }
 
 const renderContactTab = function() {
-
+    clearTab();
+    const contactCardContainer = document.createElement('div');
+    contactCardContainer.className = 'card-container';
+    const contactCard = document.createElement('div');
+    contactCard.className = 'contact-card';
+    const contactInformation = document.createElement('div');
+    contactInformation.className = 'contact-information';
+    const pageHeader = document.createElement('h1');
+    pageHeader.className = 'contact-header';
+    pageHeader.textContent = 'Contacts';
+    contactInformation.appendChild(pageHeader);
+    const email = document.createElement('p');
+    email.textContent = 'e-mail: myGoodReastaurant@example.com';
+    contactInformation.appendChild(email);
+    const phoneNumber = document.createElement('p');
+    phoneNumber.className = 'Phone-number';
+    phoneNumber.textContent = 'Phone: +123 9876543210';
+    contactInformation.appendChild(phoneNumber);
+    contactCard.appendChild(contactInformation);
+    const restaurantLocation = document.createElement('iframe');
+    restaurantLocation.src = 'https://maps.google.com/maps?q=26.140420759948206, 50.5784118470855&t=&z=10&ie=UTF8&iwloc=&output=embed';
+    contactCard.appendChild(restaurantLocation)
+    contactCardContainer.appendChild(contactCard);
+    document.querySelector('#tab-container').appendChild(contactCardContainer)
 }
 
 const renderWebiste = (function() {
@@ -146,5 +175,12 @@ const renderWebiste = (function() {
     renderHomeTab();
 })();
 
+
+const homeLink = document.querySelector('#home-link');
+homeLink.addEventListener('click', renderHomeTab);
+
 const menuLink = document.querySelector('#menu-link');
 menuLink.addEventListener('click', renderMenuTab);
+
+const contactLink = document.querySelector('#contact-link');
+contactLink.addEventListener('click', renderContactTab);

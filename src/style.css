@@ -1,3 +1,14 @@
+/* @font-face {
+    font-family: 'MyFont';
+    src: url('./fonts/Sriracha-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-family: 'MyFont';
+}  */
+
 #content {
     display: grid;
     grid-template-rows: max(150px, 20vh) max(525px, 70vh) max(75px, 10vh);
@@ -70,4 +81,34 @@
     column-gap: 20px;
     row-gap: 40px;
     justify-content: center;
+}
+
+.card-container {
+    height: 100%;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+
+}
+
+.home-card,
+.contact-card {
+    padding: 25px;
+    background: white;
+    height: 500px;
+    border-radius: 10px;
+    display: grid;
+}
+
+.home-card {
+    grid-template-columns: 1fr;
+}
+.contact-card {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+iframe {
+    height: 80%;
+    border: none;
 }
