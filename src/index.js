@@ -70,15 +70,20 @@ const renderMenuTab = function() {
         itemImage.src = item.imageUrl;
         itemCard.appendChild(itemImage)
 
+        const itemHeader = document.createElement('div');
+        itemHeader.className = 'item-header';
+
         const itemTitle = document.createElement('h3');
         itemTitle.textContent = item.title;
         itemTitle.className = 'item-title';
-        itemInformation.appendChild(itemTitle);
+        itemHeader.appendChild(itemTitle);
         
         const itemPrice = document.createElement('p');
         itemPrice.textContent = `${item.price}`;
         itemPrice.className = 'item-price';
-        itemInformation.appendChild(itemPrice);
+        itemHeader.appendChild(itemPrice);
+        
+        itemInformation.appendChild(itemHeader);
         
         const itemDescreption = document.createElement('p');
         itemDescreption.textContent = item.descreption;
