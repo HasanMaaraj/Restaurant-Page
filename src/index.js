@@ -95,7 +95,7 @@ const renderMenuTab = function() {
         itemHeader.appendChild(itemTitle);
         
         const itemPrice = document.createElement('p');
-        itemPrice.textContent = `${item.price}`;
+        itemPrice.textContent = `$${item.price}`;
         itemPrice.className = 'item-price';
         itemHeader.appendChild(itemPrice);
 
