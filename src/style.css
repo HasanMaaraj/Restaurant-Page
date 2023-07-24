@@ -1,13 +1,14 @@
-/* @font-face {
-    font-family: 'MyFont';
-    src: url('./fonts/Sriracha-Regular.ttf') format('ttf');
+@font-face {
+    font-family: 'sf_arch_rival_extendedregular';
+    src: url('./fonts/web\ fonts/sfarchrivalextended_regular_macroman/SF_Arch_Rival_Extended-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+
 }
 
-html {
-    font-family: 'MyFont';
-}  */
+body {
+    font-family: 'sf_arch_rival_extendedregular';
+} 
 
 #content {
     display: grid;
@@ -98,13 +99,10 @@ html {
     background: white;
     height: 500px;
     border-radius: 10px;
-    display: grid;
 }
 
-.home-card {
-    grid-template-columns: 1fr;
-}
 .contact-card {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
