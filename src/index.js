@@ -1,5 +1,5 @@
 import './style.css';
-import Logo from './logo.png';
+import Logo from './images/logo.png';
 import Burger from './images/burger.png'
 import Pizza from './images/pizza.png'
 import Pasta from './images/pasta.png'
