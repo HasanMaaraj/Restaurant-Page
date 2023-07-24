@@ -130,3 +130,9 @@ iframe {
     height: 80%;
     border: none;
 }
+
+.contact-card,
+.home-card,
+.item-card {
+    box-shadow: 1px 1px 5px grey;
+}
