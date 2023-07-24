@@ -4,10 +4,11 @@ import Burger from './images/burger.png'
 import Pizza from './images/pizza.png'
 import Pasta from './images/pasta.png'
 import Steak from './images/steak.png'
+import github from './images/github.svg'
 
 
 const markOnDisplay = function(tabId) {
-    const links = document.querySelectorAll('a');
+    const links = document.querySelectorAll('#links a');
     links.forEach(link => {
         link.classList.remove('on-display')
     });
@@ -180,8 +181,15 @@ const renderWebiste = (function() {
     // Create and append footer
     const footer = document.createElement('div');
     footer.id = 'footer';
+    const user = document.createElement('p')
+    user.innerHTML = 'A website by <a href="https://github.com/HasanMaaraj">Hasan Maaraj</a>';
+    user.className = 'user';
+    const githubIcon = new Image();
+    githubIcon.src = github;
+    githubIcon.className = 'github-icon';
+    footer.appendChild(user);
+    footer.appendChild(githubIcon);
     content.appendChild(footer);
-
     renderHomeTab();
 })();
 
