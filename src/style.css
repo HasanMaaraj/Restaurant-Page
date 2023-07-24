@@ -19,7 +19,7 @@ body {
 
 #header,
 #footer {
-    background-color: rgb(228, 168, 16);
+    background-color: rgba(255, 251, 0, 0.5);
 }
 
 #header {
@@ -39,7 +39,6 @@ body {
 
 #links {
     display: flex;
-    /* align-content: center; */
     gap: 20px;
 }
 
@@ -48,9 +47,21 @@ body {
     align-self: center;
     font-size: 1.5rem;
     height: 45px;
-    padding: 8px;
+    padding: 2px;
 }
 
+
+#links a:hover {
+    font-weight: bold;
+}
+
+#links a:active {
+    font-weight: bolder;
+}
+
+.on-display {
+    border-bottom: 3px solid black;
+}
 
 .item-card {
     background-color: rgba(255, 255, 255);
@@ -64,13 +75,13 @@ body {
     width: 150px;
     justify-self: center;
 }
+
 .item-header {
     display: flex;
     justify-content: space-between;
     margin-right: 12px;
     border-bottom: 4px dotted gold;
 }
-
 
 .menu {
     display: grid;

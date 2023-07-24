@@ -6,6 +6,14 @@ import Pasta from './images/pasta.png'
 import Steak from './images/steak.png'
 
 
+const markOnDisplay = function(tabId) {
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        link.classList.remove('on-display')
+    });
+    document.querySelector(tabId).classList += 'on-display';
+}
+
 const clearTab = function() {
     const tabContainer = document.querySelector('#tab-container');
     Array.from(tabContainer.childNodes).forEach(node => node.remove());
@@ -34,6 +42,7 @@ const renderHomeTab = function() {
     homeCard.appendChild(restaurantInformation);
     homeCardContainer.appendChild(homeCard);
     tabContainer.appendChild(homeCardContainer);
+    markOnDisplay('#home-link');
     
 }
 
@@ -108,7 +117,7 @@ const renderMenuTab = function() {
         menu.appendChild(div);
     });
     document.querySelector('#tab-container').appendChild(menu);
-    
+    markOnDisplay('#menu-link');
 }
 
 const renderContactTab = function() {
@@ -136,6 +145,7 @@ const renderContactTab = function() {
     contactCard.appendChild(restaurantLocation)
     contactCardContainer.appendChild(contactCard);
     document.querySelector('#tab-container').appendChild(contactCardContainer)
+    markOnDisplay('#contact-link');
 }
 
 const renderWebiste = (function() {
